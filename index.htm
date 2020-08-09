@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+            integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+            crossorigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500&display=swap"
+            rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+
+        <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500&display=swap"
+            rel="stylesheet">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+            integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js"
+            integrity="sha512-pCPP9sfLW9T7EZiw725jUl+ux032sjGhFE+ZAx00C1iO55ZmZJWpfNGbDf2ZF5b0UqxRqSW548PbZEWmH+S7pA=="
+            crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="styles/style.css">
+
+    </head>
+
+    <body onload='main()'>
+        <main>
+            <div class="props">
+            </div>
+            <div class="prop2">
+
+            </div>
+            <div class="logo">
+                <div class="art">art</div>
+                <div class="af">AF</div>
+            </div>
+            <menu>
+                <ul>
+                    <li class="active"> Home </li>
+                    <li class="workbtn"><a href="works.html">Work</a></li>
+                </ul>
+            </menu>
+            <section class="section1">
+                <div class="side1">
+                    <h3 class="cap">Say hello to <br> Art àf</h3>
+                </div>
+                <div class="side2">
+                    <img src="images/introsvg.svg" alt="">
+                </div>
+            </section>
+            <div class="credit">
+                <a href="https://www.instagram.com/_art.af_/"><img src="images/instasvg.svg" alt=""></a>
+                <a href="https://www.instagram.com/_art.af_/" class="cred">Made By Art Af</a>
+            </div>
+            <div class="sexy">
+                Art has never <br> been this sexy.
+            </div>
+        </main>
+
+
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/CSSRulePlugin.min.js"
+            integrity="sha512-Qsi1/wzhv/tTbglg9qVSOoI8Tm/aQEBjhGszeFo86w9w7+VyCPU6aSm72ActHflic7o5zATaceSn9CW+EshtJg=="
+            crossorigin="anonymous"></script>
+        <script>
+            function main() {
+                gsap.from('body', {
+                    opacity: 0,
+                    duration: .2,
+                    ease: "power4.out"
+                });
+                gsap.from(['.props', '.prop2'], {
+                    duration: 2,
+                    // delay: 1,
+                    width: '0%',
+                    ease: "expo.out"
+                });
+                gsap.from('.side2 img', {
+                    duration: .7,
+                    opacity: .5,
+                    x: 20
+                })
+                gsap.from('.cap', {
+                    duration: 1,
+                    // delay: 1,
+                    y: 100,
+                    ease: "expo.out"
+                });
+                var rule = CSSRulePlugin.getRule(".cap:before"); //get the rule
+                gsap.from(rule, {
+                    duration: 1,
+                    cssRule: {
+                        width: '0%',
+                        ease: "elastic.out(1, 0.3)",
+                        backgroundColor: 'black'
+                    }
+                });
+                gsap.from('.sexy', {
+                    duration: 1,
+                    opacity: 0,
+                    y: 10,
+                    ease: "power1.out"
+                })
+                var rule1 = CSSRulePlugin.getRule(".art:before"); //get the rule
+                gsap.from(rule1, {
+                    duration: 1,
+                    cssRule: {
+                        height: '0%',
+                        ease: "elastic.out(1, 0.3)",
+                        backgroundColor: 'black'
+                    }
+                });
+                gsap.from('menu', {
+                    duration: 2.5,
+                    x: -200,
+                    ease: "bounce.out"
+                })
+            }
+        </script>
+    </body>
+
+</html>

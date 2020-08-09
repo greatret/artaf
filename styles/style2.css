@@ -1,0 +1,253 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+body {
+    background-image: url('https://images.unsplash.com/photo-1542025479963-e976f1db9b31?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=936&q=80');
+    background-position: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgb(14, 13, 13);
+    width: 100%;
+    height: 300vh;
+    overflow-x: hidden;
+    font-family: 'Cairo', sans-serif;
+}
+
+
+
+.work {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 300vh;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.692);
+    z-index: 20;
+    -webkit-transition: all .4s;
+    transition: all .4s;
+    overflow-x: hidden;
+}
+
+
+.work .workhead {
+    position: relative;
+    height: 10vh;
+    font-size: 2.5em;
+    color: white;
+    letter-spacing: 5px;
+    font-family: 'Montserrat';
+    margin-bottom: 20px;
+}
+
+.work .workhead::after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    top: 12px;
+    left: 50%;
+    background-color: white;
+}
+
+.img-holder {
+    position: relative;
+    height: 350px;
+    overflow: hidden;
+}
+
+.img-holder img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+hr {
+    width: 80%;
+    margin: 20px auto;
+    background-color: white;
+}
+
+.info-holder h3 {
+    color: white;
+    font-size: 3em;
+    letter-spacing: 2px;
+    font-family: 'Poppins';
+}
+
+.info-holder p {
+    letter-spacing: 1.2px;
+    color: white;
+    font: 1.5em;
+    margin-left: 12px;
+}
+
+.row1::after {
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    content: '';
+    position: absolute;
+    width: .1%;
+    height: 40%;
+    right: 0;
+    top: 0;
+    background: rgba(253, 65, 168, 0.541);
+}
+
+.info-holder:hover.row1::after {
+    background: rgba(253, 65, 168, 0.815);
+    width: .3%;
+}
+
+.info-holder:hover.row2::after {
+    background: #b2f3f8;
+    width: .3%;
+}
+
+.info-holder:hover.row3::after {
+    background: #adbddb;
+    width: .3%;
+}
+
+.row2::after {
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    content: '';
+    position: absolute;
+    width: .1%;
+    height: 40%;
+    right: 0;
+    top: 0;
+    background: #BAD8DA;
+}
+
+.row3::after {
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    content: '';
+    position: absolute;
+    width: .1%;
+    height: 40%;
+    right: 0;
+    top: 0;
+    background: #B8BCC4;
+}
+
+.img-holder img {
+    -webkit-transition: all .4s;
+    transition: all .4s;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    -webkit-transform: scale(0.8) rotate(30deg);
+    transform: scale(0.8) rotate(30deg);
+}
+
+.img-holder img:hover {
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
+    -webkit-transform: scale(1) rotate(0deg);
+    transform: scale(1) rotate(0deg);
+}
+
+.credit {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 120px;
+    height: 30px;
+    /* background-color: yellow; */
+}
+
+.credit img {
+    position: absolute;
+    width: 20%;
+    height: 100%;
+}
+
+.credit .cred {
+    font-family: 'Poppins';
+    color: #b3a6a6;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-left: 23%;
+    font-size: .8em;
+    height: 100%;
+}
+
+a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+@media (max-width:920px) {
+    .info-holder {
+        margin-left: 40px;
+    }
+
+    .img-holder img {
+        -webkit-filter: grayscale(0);
+        filter: grayscale(0);
+        animation: colorchange .9s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+
+    .row1::after {
+        width: 50%;
+        height: 1%;
+        right: 0;
+        bottom: 0;
+    }
+
+    .row2::after {
+        width: 50%;
+        height: 1%;
+        right: 0;
+        bottom: 0;
+    }
+
+    .row3::after {
+        width: 50%;
+        height: 1%;
+        right: 0;
+        bottom: 0;
+    }
+
+    .credit {
+        position: fixed;
+        top: 5px;
+        right: 0;
+    }
+
+    .cred {
+        color: white;
+    }
+
+    .info-holder p::after {
+        position: absolute;
+        content: '';
+        width: 1%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: antiquewhite;
+    }
+}
+
+@keyframes colorchange {
+    form {
+        filter: grayscale(0);
+    }
+
+    to {
+        filter: grayscale(100%)
+    }
+}
